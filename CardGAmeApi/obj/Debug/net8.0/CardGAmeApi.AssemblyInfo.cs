@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CardGAmeApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+03ef192efd3c9c7778b2907c611b314da7ad542b")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad6af4920567947c7a363428be462df378a0be22")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("CardGAmeApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CardGAmeApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
