@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aa\\Documents\\GitHub\\web-card-game\\CardGAmeApi\\CardGAmeApi.csproj": {}
+    "/workspaces/web-card-game/CardGAmeApi/CardGAmeApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aa\\Documents\\GitHub\\web-card-game\\CardGAmeApi\\CardGAmeApi.csproj": {
+    "/workspaces/web-card-game/CardGAmeApi/CardGAmeApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aa\\Documents\\GitHub\\web-card-game\\CardGAmeApi\\CardGAmeApi.csproj",
+        "projectUniqueName": "/workspaces/web-card-game/CardGAmeApi/CardGAmeApi.csproj",
         "projectName": "CardGAmeApi",
-        "projectPath": "C:\\Users\\aa\\Documents\\GitHub\\web-card-game\\CardGAmeApi\\CardGAmeApi.csproj",
-        "packagesPath": "C:\\Users\\aa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aa\\Documents\\GitHub\\web-card-game\\CardGAmeApi\\obj\\",
+        "projectPath": "/workspaces/web-card-game/CardGAmeApi/CardGAmeApi.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/web-card-game/CardGAmeApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\aa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.407/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
