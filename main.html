@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>War Card Game - Main</title>
+  <link rel="stylesheet" href="src/styles/main.css">
+</head>
+<body>
+  <div id="main-page">
+    <h1>War Card Game</h1>
+    <div id="card-stack">
+      <img src="src/assets/cards/ace_of_spades.png" alt="Ace of Spades">
+      <img src="src/assets/cards/3_of_hearts.png" alt="3 of Hearts">
+      <img src="src/assets/cards/king_of_clubs.png" alt="King of Clubs">
+    </div>
+    <button id="play-button">PLAY</button>
+    <div id="mode-selector">
+      <button id="pvp-mode">PVP</button>
+      <button id="ai-mode">AI</button>
+    </div>
+  </div>
+
+  <script>
+    // Navigate to the game page when "PLAY" is clicked
+    document.getElementById('play-button').addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

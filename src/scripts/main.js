@@ -3,6 +3,7 @@ let deck = [];
 let player1Deck = [];
 let player2Deck = [];
 let centerPile = [];
+let currentPlayer = 1; // Track whose turn it is (1 = Player 1, 2 = Player 2)
 
 // Card values and suits
 const suits = ['hearts', 'diamonds', 'clubs', 'spades'];
@@ -73,28 +74,64 @@ function compareCards(card1, card2) {
     centerCardsArea.textContent = 'Player 2 wins the round!';
   } else {
     centerCardsArea.textContent = 'War!';
-    // Handle war logic here
+    handleWar();
+  }
+  currentPlayer = 1; // Reset to Player 1's turn
+}
+
+// Handle war logic
+function handleWar() {
+  if (player1Deck.length < 4 || player2Deck.length < 4) {
+    centerCardsArea.textContent = 'Game Over! Not enough cards for war.';
+    return;
+  }
+
+  // Each player places three cards face down and one face up
+  const warCards = [];
+  for (let i = 0; i < 4; i++) {
+    warCards.push(player1Deck.shift());
+    warCards.push(player2Deck.shift());
+  }
+
+  const player1WarCard = warCards[warCards.length - 2];
+  const player2WarCard = warCards[warCards.length - 1];
+
+  centerPile.push(...warCards);
+
+  if (player1WarCard.rank > player2WarCard.rank) {
+    player1Deck.push(...centerPile);
+    centerPile = [];
+    centerCardsArea.textContent = 'Player 1 wins the war!';
+  } else if (player2WarCard.rank > player1WarCard.rank) {
+    player2Deck.push(...centerPile);
+    centerPile = [];
+    centerCardsArea.textContent = 'Player 2 wins the war!';
+  } else {
+    centerCardsArea.textContent = 'Another tie! War continues!';
+    handleWar(); // Recursive call for another war
   }
 }
 
 // Event listeners for draw buttons
 player1DrawButton.addEventListener('click', () => {
-  if (centerPile.length === 0) {
+  if (currentPlayer === 1 && centerPile.length === 0) {
     const card1 = drawCard(1);
     const card2 = drawCard(2);
     if (card1 && card2) {
       compareCards(card1, card2);
     }
+    currentPlayer = 2; // Switch to Player 2's turn
   }
 });
 
 player2DrawButton.addEventListener('click', () => {
-  if (centerPile.length === 0) {
+  if (currentPlayer === 2 && centerPile.length === 0) {
     const card1 = drawCard(1);
     const card2 = drawCard(2);
     if (card1 && card2) {
       compareCards(card1, card2);
     }
+    currentPlayer = 1; // Switch to Player 1's turn
   }
 });
 
