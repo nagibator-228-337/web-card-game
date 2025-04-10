@@ -77,6 +77,7 @@ function compareCards(card1, card2) {
     handleWar();
   }
   currentPlayer = 1; // Reset to Player 1's turn
+  checkGameOver();
 }
 
 // Handle war logic
@@ -86,7 +87,6 @@ function handleWar() {
     return;
   }
 
-  // Each player places three cards face down and one face up
   const warCards = [];
   for (let i = 0; i < 4; i++) {
     warCards.push(player1Deck.shift());
@@ -98,6 +98,11 @@ function handleWar() {
 
   centerPile.push(...warCards);
 
+  centerCardsArea.innerHTML = `
+    <img src="src/assets/cards/${player1WarCard.name.toLowerCase()}_of_${player1WarCard.suit}.png" alt="${player1WarCard.name} of ${player1WarCard.suit}" class="center-card">
+    <img src="src/assets/cards/${player2WarCard.name.toLowerCase()}_of_${player2WarCard.suit}.png" alt="${player2WarCard.name} of ${player2WarCard.suit}" class="center-card">
+  `;
+
   if (player1WarCard.rank > player2WarCard.rank) {
     player1Deck.push(...centerPile);
     centerPile = [];
@@ -108,7 +113,17 @@ function handleWar() {
     centerCardsArea.textContent = 'Player 2 wins the war!';
   } else {
     centerCardsArea.textContent = 'Another tie! War continues!';
-    handleWar(); // Recursive call for another war
+    handleWar();
+  }
+  checkGameOver();
+}
+
+// Check if the game is over
+function checkGameOver() {
+  if (player1Deck.length === 0) {
+    centerCardsArea.innerHTML = '<div class="victory-message">Player 2 Wins the Game!</div>';
+  } else if (player2Deck.length === 0) {
+    centerCardsArea.innerHTML = '<div class="victory-message">Player 1 Wins the Game!</div>';
   }
 }
 
