@@ -1,0 +1,109 @@
+### Documentation: War Card Game Project
+
+---
+
+#### Project Overview
+The *War Card Game* is a browser-based implementation of the classic card game "War." It is designed for local multiplayer gameplay, where two players compete to win all the cards in the deck. The project is built using **HTML**, **CSS**, and **JavaScript**.
+
+---
+
+### Features Implemented
+
+#### 1. Main Page (Start Screen)
+- **File**: `main.html`
+- **Purpose**: Acts as the entry point for the game. Players can start the game or select a mode (e.g., Player vs. Player or Player vs. AI).
+- **Design**:
+  - A visually appealing red background with a "PLAY" button.
+  - A card stack displayed as part of the design.
+  - Buttons for selecting game modes (currently functional only for PVP).
+- **Navigation**:
+  - Clicking the "PLAY" button redirects the user to the game page (`index.html`).
+
+#### 2. Game Page
+- **File**: `index.html`
+- **Purpose**: The main gameplay interface where players draw cards and compete.
+- **Structure**:
+  - Player 1 and Player 2 sections with card areas and draw buttons.
+  - A center area to display the results of each round or handle "war" scenarios.
+  - Footer with copyright information.
+
+#### 3. Card Deck and Gameplay Logic
+- **File**: `src/scripts/main.js`
+- **Purpose**: Implements the game logic, including deck creation, card drawing, and handling "war" scenarios.
+- **Key Features**:
+  - **Deck Creation**: A standard 52-card deck is created and shuffled.
+  - **Card Drawing**: Players draw cards from their respective decks, and the cards are displayed dynamically.
+  - **Turn-Based Gameplay**: Ensures only one player can draw a card at a time.
+  - **War Logic**: Handles ties by implementing the "war" rules (players place three cards face down and one face up).
+  - **Game Over Condition**: Ends the game if a player runs out of cards during a war.
+
+#### 4. Card Images
+- **Folder**: `src/assets/cards`
+- **Purpose**: Stores the 52 card face images.
+- **Naming Convention**:
+  - `<rank>_of_<suit>.png`
+  - Example: `ace_of_spades.png`, `3_of_hearts.png`, `king_of_clubs.png`.
+- **Integration**:
+  - Card images are dynamically loaded into the game using JavaScript based on the card's rank and suit.
+
+#### 5. Styling
+- **File**: `src/styles/main.css`
+- **Purpose**: Provides styling for both the main page and the game page.
+- **Key Styles**:
+  - **Main Page**:
+    - Red background with a centered layout.
+    - Styled "PLAY" button and mode selector buttons.
+    - Card stack with shadow effects.
+  - **Game Page**:
+    - Player sections with card areas styled as dashed boxes.
+    - Buttons with hover effects.
+    - Card images styled with rounded corners and shadows.
+
+---
+
+### Directory Structure
+
+web-card-game 
+├── main.html # Main page (start screen) 
+├── index.html # Game page 
+├── src 
+│ ├── assets 
+│ │ └── cards # Folder containing 52 card images 
+│ │ ├── ace_of_spades.png 
+│ │ ├── 3_of_hearts.png 
+│ │ └── ... (other cards) 
+│ ├── scripts 
+│ │ └── main.js # JavaScript for game logic 
+│ ├── styles 
+│ └── main.css # CSS for styling
+
+---
+
+### How It Works
+
+#### 1. Main Page Workflow
+- The user opens `main.html`.
+- The "PLAY" button redirects to `index.html` to start the game.
+
+#### 2. Game Page Workflow
+- Players take turns clicking their respective "Draw Card" buttons.
+- The game compares the drawn cards and determines the winner of the round.
+- If a tie occurs, the "war" logic is triggered.
+- The game continues until one player collects all the cards or runs out of cards during a war.
+
+#### 3. Dynamic Card Display
+- Card images are dynamically loaded into the card areas based on the card's rank and suit.
+- Example: If Player 1 draws the Ace of Spades, the image `ace_of_spades.png` is displayed in their card area.
+
+---
+
+### Next Steps
+1. **Enhancements**:
+   - Add animations for card drawing and war scenarios.
+   - Improve the UI for better visual feedback (e.g., disable buttons for inactive players).
+2. **Game Modes**:
+   - Implement the "AI" mode for single-player gameplay.
+3. **Sound Effects**:
+   - Add sound effects for card drawing and winning a round.
+4. **Responsive Design**:
+   - Ensure the game works well on different screen sizes (e.g., mobile devices).
