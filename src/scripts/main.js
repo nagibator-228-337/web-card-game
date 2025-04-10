@@ -50,12 +50,12 @@ function dealCards() {
 function drawCard(player) {
   if (player === 1 && player1Deck.length > 0) {
     const card = player1Deck.shift();
-    player1CardArea.textContent = `${card.name} of ${card.suit}`;
+    player1CardArea.innerHTML = `<img src="src/assets/cards/${card.name.toLowerCase()}_of_${card.suit}.png" alt="${card.name} of ${card.suit}" class="card-image">`;
     centerPile.push(card);
     return card;
   } else if (player === 2 && player2Deck.length > 0) {
     const card = player2Deck.shift();
-    player2CardArea.textContent = `${card.name} of ${card.suit}`;
+    player2CardArea.innerHTML = `<img src="src/assets/cards/${card.name.toLowerCase()}_of_${card.suit}.png" alt="${card.name} of ${card.suit}" class="card-image">`;
     centerPile.push(card);
     return card;
   }
