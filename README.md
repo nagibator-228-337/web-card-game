@@ -1,37 +1,40 @@
-# web-card-game
+## War Card Game
 
-**War Card Game (Drunkard)**  
-**Description**  
+### Overview
 
-The War Card Game is a classic card game "Drunkard" (or "War"), implemented as a web application using Node.js, Express, Vue.js, and Socket.IO. The game allows two players to compete against each other in real-time through a web browser.  
+*War* is a simple card game for two players, where the goal is to win all the cards in the deck. The game involves two players using a standard deck of 52 cards and competing to have the highest card in each round.
 
-**Technology Stack:**
+### Objective
 
-- **Frontend**: Vue.js, Socket.IO (client-side)
-- **Backend**: Node.js, Express, Socket.IO (server-side)
-- **WebSocket**: Implemented for real-time data exchange between players  
+The objective of *War* is to collect all the cards in the deck by winning rounds. Players compete by each drawing a card from their deck, and the player with the higher card wins the round and takes both cards.
 
-**Game Rules**  
-**Objective of the Game:**  
-The goal of the game is to capture all the opponent's cards and become the winner.  
+### Rules of Play
 
-**Card Dealing:**
+1. **Setup**: Shuffle the deck and deal the entire deck evenly between the two players. Each player has their own stack of cards, face down.
+2. **Gameplay**:
+   - Both players simultaneously draw the top card from their stack and place it face-up in the center.
+   - The player with the higher card wins both cards and places them at the bottom of their stack.
+   - If the cards are of equal rank, a "war" is triggered:
+     - Each player places three cards face down in the center and then draws a fourth card.
+     - The player with the higher fourth card wins all the cards in the center. If there is another tie, the war continues until a winner is determined.
+3. **End of the Game**: The game ends when one player has all the cards or when players decide to stop playing. The winner is the player who has collected all the cards.
 
-- A deck of 52 cards is divided equally between the two players.  
-- The cards are hidden and revealed one by one in each round.  
+### Card Ranks
 
-**Gameplay:**  
+Cards in *War* are ranked from highest to lowest in the following order:
 
-- Players simultaneously draw one card. The winner is the one with the higher card.  
-- The defeated player's cards go to the winner and are placed at the end of the winner's deck.  
-- If the cards are the same, a "War" begins:  
-  - Both players place three cards face down and one card face up.  
-  - The last face-up card determines who wins all the cards.  
-  - If there is another tie, the war repeats.  
+- Ace (highest)
+- King
+- Queen
+- Jack
+- 10, 9, 8, 7, 6, 5, 4, 3, 2 (lowest)
 
-**End of the Game:**  
-The game ends when one player captures all the cards.  
-If a player runs out of cards, they lose.  
+### Variations
 
-**Shuffling the Cards:**  
-After each round, the winner shuffles their captured cards before placing them at the end of their deck.
+There are several variations of *War*, including:
+- **Multiple Decks**: Using more than one deck of cards to extend the gameplay.
+- **Changing the War Rules**: Some versions may change the number of cards placed down during a war or introduce different rules for resolving ties.
+
+### Strategy
+
+While *War* is largely a game of chance, players may try to use strategies based on the order of cards or the number of cards they have remaining. However, the outcome is mainly determined by luck, as cards are drawn at random.
